@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Россия в коробке | Подарочные боксы-путешествия</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Специфичные стили для главной страницы */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 80px 0;
+            background-color: var(--gray);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .mission {
+            padding: 100px 0;
+        }
+
+        .mission-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .mission-text {
+            flex: 1;
+        }
+
+        .mission-text h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .mission-text p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .mission-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cities-preview {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .city-preview {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .city-preview:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(211, 47, 47, 0.15);
+        }
+
+        .city-preview-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .city-preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .city-preview:hover .city-preview-image img {
+            transform: scale(1.1);
+        }
+
+        .city-preview-content {
+            padding: 25px;
+        }
+
+        .city-preview-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .city-preview-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            background-color: var(--red);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-section .btn {
+            background-color: white;
+            color: var(--red);
+            font-size: 1.2rem;
+            padding: 18px 50px;
+        }
+
+        .cta-section .btn:hover {
+            background-color: var(--gray);
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Россия в коробке</h1>
+                    <p>Подарочные боксы-путешествия</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="#cities">Боксы</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="container">
+            <h2>Открой Россию заново</h2>
+            <p>Уникальные подарочные боксы-путешествия с социальной миссией. Каждая покупка поддерживает локальных производителей и открывает для вас новый город России.</p>
+            <a href="#cities" class="btn">Выбрать бокс</a>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <div class="stat-text">городов России</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-text">локальных мастеров</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4900₽</div>
+                <div class="stat-text">стоимость бокса</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15%</div>
+                <div class="stat-text">скидка на следующий бокс</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Миссия -->
+    <section class="mission">
+        <div class="container mission-content">
+            <div class="mission-text">
+                <h2>Наша миссия</h2>
+                <p>Мы создаем успешный социально-ориентированный бизнес, который через продажу уникальных боксов-путешествий повышает интерес к внутреннему туризму и обеспечивает стабильный сбыт для локальных производителей.</p>
+                <p>Каждый бокс — это интерактивный подарок-приключение, который включает уникальные товары от местных мастеров, туристический маршрут и «Паспорт путешественника» для сбора печатей.</p>
+                <a href="about.html" class="btn">Узнать больше</a>
+            </div>
+            <div class="mission-image">
+                <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Миссия Россия в коробке">
+            </div>
+        </div>
+    </section>
+
+    <!-- Превью городов -->
+    <section class="cities-preview" id="cities">
+        <div class="container">
+            <h2 class="section-title">Выберите город</h2>
+            <div class="cities-grid">
+                <a href="petersburg.html" class="city-preview">
+                    <div class="city-preview-image">
+                        <img src="images/petersburg.jpg">
+                    </div>
+                    <div class="city-preview-content">
+                        <h3 class="city-preview-title">Санкт-Петербург</h3>
+                        <div class="city-preview-price">4 900 ₽</div>
+                        <p>Императорская столица России</p>
+                    </div>
+                </a>
+                
+                <a href="irkutsk.html" class="city-preview">
+                    <div class="city-preview-image">
+                        <img src="images/irkutsk.jpg">
+                    </div>
+                    <div class="city-preview-content">
+                        <h3 class="city-preview-title">Иркутск</h3>
+                        <div class="city-preview-price">4 900 ₽</div>
+                        <p>Байкальская сага</p>
+                    </div>
+                </a>
+                
+                <a href="petrozavodsk.html" class="city-preview">
+                    <div class="city-preview-image">
+                        <img src="images/petrozavodsk.jpg">
+                    </div>
+                    <div class="city-preview-content">
+                        <h3 class="city-preview-title">Петрозаводск</h3>
+                        <div class="city-preview-price">4 900 ₽</div>
+                        <p>Карельский дух</p>
+                    </div>
+                </a>
+                
+                <a href="kazan.html" class="city-preview">
+                    <div class="city-preview-image">
+                        <img src="images/kazan.jpg">
+                    </div>
+                    <div class="city-preview-content">
+                        <h3 class="city-preview-title">Казань</h3>
+                        <div class="city-preview-price">4 900 ₽</div>
+                        <p>Восточная сказка</p>
+                    </div>
+                </a>
+                
+                <a href="vologda.html" class="city-preview">
+                    <div class="city-preview-image">
+                        <img src="images/vologda.jpg">
+                    </div>
+                    <div class="city-preview-content">
+                        <h3 class="city-preview-title">Вологда</h3>
+                        <div class="city-preview-price">4 900 ₽</div>
+                        <p>Ремесленная слобода</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Готовы начать путешествие?</h2>
+            <p>Выберите город, который хотите открыть для себя, и получите уникальный бокс с сувенирами от местных мастеров, подробным маршрутом и Паспортом путешественника.</p>
+            <a href="#cities" class="btn">Смотреть все боксы</a>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Россия в коробке</h3>
+                    <p>Тематические подарочные боксы-путешествия с социальной миссией</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="#cities">Боксы</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+79005598622">+7 (900) 559-86-22</a></li>
+                        <li><a href="russia-in-box@mail.ru">russia-in-box@mail.ru</a></li>
+                        <li>г. Вологда</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 "Россия в коробке". Все права защищены.</p>
+                <p>ИП Федулова Софья Андреевна</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

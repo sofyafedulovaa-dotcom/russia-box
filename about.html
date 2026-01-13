@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте | Россия в коробке</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            background-color: var(--red);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .about-content {
+            padding: 100px 0;
+        }
+
+        .about-section {
+            margin-bottom: 80px;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .goal-item {
+            background-color: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--red);
+        }
+
+        .goal-item h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .team {
+            background-color: var(--gray);
+            padding: 100px 0;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-member h3 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .team-member p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+
+        .value-item h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Россия в коробке</h1>
+                    <p>Подарочные боксы-путешествия</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html" class="active">О проекте</a></li>
+                    <li><a href="index.html#cities">Боксы</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1>О проекте</h1>
+            <p>Узнайте больше о нашей миссии, целях и социальной значимости проекта «Россия в коробке»</p>
+        </div>
+    </section>
+
+    <!-- Содержание -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <h2>Наша история</h2>
+                <p>Проект «Россия в коробке» родился из желания соединить любовь к путешествиям по России с поддержкой локальных производителей. Основатель проекта, Софья Андреевна Федулова, студентка педагогического института по направлению «Биология и География», объединила свои знания о регионах России с предпринимательским духом.</p>
+                <p>Имея глубокое понимание региональных особенностей, культурного и природного потенциала России, мы создали уникальный формат подарка-путешествия, который позволяет открывать города России по-новому.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Наши цели</h2>
+                <div class="goals">
+                    <div class="goal-item">
+                        <h3>Поддержка малого бизнеса</h3>
+                        <p>Обеспечить стабильный сбыт для локальных производителей (ИП и самозанятых) в 5 пилотных городах России.</p>
+                    </div>
+                    <div class="goal-item">
+                        <h3>Популяризация туризма</h3>
+                        <p>Повысить интерес к внутреннему туризму через уникальные интерактивные боксы-путешествия.</p>
+                    </div>
+                    <div class="goal-item">
+                        <h3>Образовательная миссия</h3>
+                        <p>Рассказать о культурном и историческом наследии российских городов в увлекательном формате.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Наши ценности</h2>
+                <div class="values">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Социальная ответственность</h3>
+                        <p>Каждая покупка напрямую поддерживает конкретного мастера из региона</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Качество и уникальность</h3>
+                        <p>Только hand-made товары от локальных производителей</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Интерактивность</h3>
+                        <p>Игра с печатями мотивирует к реальному путешествию</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Любовь к России</h3>
+                        <p>Искренняя забота о сохранении культурного наследия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда -->
+    <section class="team">
+        <div class="container">
+            <div class="team-member">
+                <h3>Федулова Софья Андреевна</h3>
+                <p>Основатель проекта «Россия в коробке»</p>
+                <p>Студентка 2 курса ФГБОУ ВО «Вологодский государственный университет», педагогический институт, направление «Педагогическое образование» (профиль: Биология и География).</p>
+                <p>«Моя цель — создать бизнес, который будет не только приносить доход, но и реальную пользу: поддерживать малый бизнес в регионах и популяризировать внутренний туризм.»</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Россия в коробке</h3>
+                    <p>Тематические подарочные боксы-путешествия с социальной миссией</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="index.html#cities">Боксы</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+79005598622">+7 (900) 559-86-22</a></li>
+                        <li><a href="mailto:info@russia-in-box.ru">info@russia-in-box.ru</a></li>
+                        <li>г. Вологда</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 "Россия в коробке". Все права защищены.</p>
+                <p>ИП Федулова Софья Андреевна</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
